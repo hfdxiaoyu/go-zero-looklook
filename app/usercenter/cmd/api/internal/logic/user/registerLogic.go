@@ -26,6 +26,8 @@ func NewRegisterLogic(ctx context.Context, svcCtx *svc.ServiceContext) RegisterL
 	}
 }
 
+// `Register` 函数是 `RegisterLogic`
+// 结构体的一个方法。它接受一个“types.RegisterReq”参数并返回一个“*types.RegisterResp”和一个“error”。
 func (l *RegisterLogic) Register(req types.RegisterReq) (*types.RegisterResp, error) {
 
 	registerResp, err := l.svcCtx.UsercenterRpc.Register(l.ctx, &usercenter.RegisterReq{

@@ -30,9 +30,10 @@ func NewGetUserInfoLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GetUs
 	}
 }
 
+// `GetUserInfo` 函数是一个逻辑函数，它根据提供的用户 ID 检索用户信息。
 func (l *GetUserInfoLogic) GetUserInfo(in *pb.GetUserInfoReq) (*pb.GetUserInfoResp, error) {
 
-	user, err := l.svcCtx.UserModel.FindOne(l.ctx,in.Id)
+	user, err := l.svcCtx.UserModel.FindOne(l.ctx, in.Id)
 	if err != nil && err != model.ErrNotFound {
 		return nil, errors.Wrapf(xerr.NewErrCode(xerr.DB_ERROR), "GetUserInfo find user db err , id:%d , err:%v", in.Id, err)
 	}

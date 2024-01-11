@@ -26,6 +26,7 @@ func NewDetailLogic(ctx context.Context, svcCtx *svc.ServiceContext) DetailLogic
 	}
 }
 
+// “Detail”函数是“DetailLogic”结构的一个方法。它接受一个“types.UserInfoReq”参数并返回一个“*types.UserInfoResp”和一个“error”。
 func (l *DetailLogic) Detail(req types.UserInfoReq) (*types.UserInfoResp, error) {
 
 	userId := ctxdata.GetUidFromCtx(l.ctx)

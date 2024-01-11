@@ -34,7 +34,7 @@ func NewWxMiniAuthLogic(ctx context.Context, svcCtx *svc.ServiceContext) WxMiniA
 	}
 }
 
-// Wechat-Mini auth
+// `WxMiniAuth`函数负责处理微信小程序用户的认证过程。以下是它的作用的详细说明：
 func (l *WxMiniAuthLogic) WxMiniAuth(req types.WXMiniAuthReq) (*types.WXMiniAuthResp, error) {
 
 	//1、Wechat-Mini
